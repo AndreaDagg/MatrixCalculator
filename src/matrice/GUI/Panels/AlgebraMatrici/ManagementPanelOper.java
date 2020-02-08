@@ -1,4 +1,4 @@
-package matrice.GUI.Panels.Operazioni;
+package matrice.GUI.Panels.AlgebraMatrici;
 
 import matrice.GUI.Frame.MainFrame;
 import java.awt.Color;
@@ -7,7 +7,6 @@ import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
-import javax.swing.JList;
 import javax.swing.JPanel;
 
 public class ManagementPanelOper extends JPanel{
@@ -85,7 +84,7 @@ public class ManagementPanelOper extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(129, 200, 132);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         

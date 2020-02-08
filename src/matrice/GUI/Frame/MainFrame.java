@@ -4,21 +4,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import matrice.GUI.Panels.MainPanel;
 import matrice.GUI.Panels.Determinante.ManagementPanelDet;
-import matrice.GUI.Panels.Operazioni.ManagementPanelOper;
+import matrice.GUI.Panels.AlgebraMatrici.ManagementPanelOper;
 import matrice.GUI.Panels.Determinante.Matrice2x2;
 import matrice.GUI.Panels.Determinante.Matrice3x3;
 import matrice.GUI.Panels.Determinante.Matrice4x4;
-import matrice.GUI.Panels.Operazioni.Inversa2x2;
-import matrice.GUI.Panels.Operazioni.Inversa3x3;
-import matrice.GUI.Panels.Operazioni.Prodotto3x3Panel;
-import matrice.GUI.Panels.Operazioni.Prodotto4x4Panel;
-import matrice.GUI.Panels.Operazioni.SumDiff3x3Panel;
-import matrice.GUI.Panels.Operazioni.SumDiff4x4Panel;
+import matrice.GUI.Panels.AlgebraMatrici.Inversa2x2;
+import matrice.GUI.Panels.AlgebraMatrici.Inversa3x3;
+import matrice.GUI.Panels.AlgebraMatrici.Prodotto3x3Panel;
+import matrice.GUI.Panels.AlgebraMatrici.Prodotto4x4Panel;
+import matrice.GUI.Panels.AlgebraMatrici.SumDiff3x3Panel;
+import matrice.GUI.Panels.AlgebraMatrici.SumDiff4x4Panel;
 import matrice.GUI.Panels.Rango.ManagementPanelRango;
 import matrice.GUI.Panels.Rango.MatrRango2x2;
 import matrice.GUI.Panels.Rango.MatrRango3x3;
-
-import java.awt.*;
 
 public class MainFrame extends JFrame{
     public static final int LARGHEZZA = 1200, ALTEZZA = 680;

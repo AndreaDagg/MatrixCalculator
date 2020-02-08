@@ -31,32 +31,32 @@ public class MatrRango2x2 extends JPanel{
         
         mouseListner listner = new mouseListner();
         
-        this.calcola = new JButton("CALCOLA");
-        this.calcola.setBounds(540, 30, 180, 60);
+        this.calcola = new JButton("RANGO");
+        this.calcola.setBounds(420, 420, 180, 60);
         this.calcola.addMouseListener(listner);
         this.calcola.setForeground(Color.WHITE);
         this.calcola.setBackground(Color.BLACK);
         this.add(this.calcola);
         
-        this.reset = new JButton("RESET");
-        this.reset.setBounds(540, 120, 180, 60);
+        this.reset = new JButton("Cancella");
+        this.reset.setBounds(420 + 181, 420, 180, 60);
         this.reset.addMouseListener(listner);
         this.reset.setForeground(Color.WHITE);
         this.reset.setBackground(Color.BLACK);
         this.add(this.reset);
         
         this.indietro = new JButton("INDIETRO");
-        this.indietro.setBounds(540, 210, 180, 60);
+        this.indietro.setBounds(20, 570, 180, 60);
         this.indietro.addMouseListener(listner);
         this.indietro.setForeground(Color.BLACK);
-        this.indietro.setBackground(Color.WHITE);
+        this.indietro.setBackground(new Color(239, 83, 80));
         this.add(this.indietro);
         
         int spazioX = 180, spazioY = 80; 
         for(int i = 0; i < 2; i ++){
             for(int j = 0; j < 2; j ++){
                 this.matrice[i][j] = new JTextField();
-                this.matrice[i][j].setBounds(100 + (spazioX * i), 90 + (spazioY * j), 102, 42);
+                this.matrice[i][j].setBounds(470 + (spazioX * i), 130 + (spazioY * j), 102, 42);
                 this.matrice[i][j].setBackground(Color.WHITE);
                 this.matrice[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice[i][j].setForeground(Color.BLACK);
@@ -68,57 +68,47 @@ public class MatrRango2x2 extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(239, 83, 80);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
-        
-        g.setColor(Color.WHITE);
-        g.fillRect(20, 10, 440, 280);
-        
+
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, 50));
+        g.drawString("Calcolo rango di una matrice 2x2", 50, 60);
+
+
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(40, 70, 5, 160);  //verticale
-        g.fillRect(40, 70, 20, 5);  
-        g.fillRect(40, 225, 20, 5);  
+        g.fillRect(400, 110, 5, 160);  //verticale
+
         
         //parentesi dx
-        g.fillRect(435, 70, 5, 160);  //verticale
-        g.fillRect(420, 70, 20, 5);  
-        g.fillRect(420, 225, 20, 5);
-               
-        
-        //griglia
-        g.setColor(Color.GRAY);
-        
-        int spazioX = 20;
-        
-        for(int i = 0; i < 15; i ++){
-            g.fillRect(20, 10 + (spazioX * i), 440, 1);   //orizzontali
-        }
-        for(int i = 0; i < 23; i ++){
-            g.fillRect(20 + (spazioX * i), 10, 1, 280);     //verticali
-        }
-        
-        Color c1 = new Color(255, 150, 0);
+        g.fillRect(815, 110, 5, 160);  //verticale
+
+        Color c1 = new Color(239, 83, 80);
         g.setColor(c1);
         g.fillRect( 0, 380, this.getWidth(), 230);
-        
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+        g.drawString("Rango: ", 430, 320);
         
         g.setColor(Color.BLACK);
         g.setFont(new Font(Font.SERIF, Font.ITALIC, 30));
         if(attivaDet){
-            g.drawString("Il rango e': ", 20, 420);
+           // g.drawString("Il rango e': ", 20, 420);
             if(det != 0){
-                g.setColor(Color.red);
-                g.drawString("2", 260, 420);
+                g.setColor(Color.white);
+                g.drawString("2", 600, 320);
             }
             else if(num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0){
-                g.setColor(Color.red);
-                g.drawString("0", 260, 420);
+                g.setColor(Color.white);
+                g.drawString("0", 600, 320);
             }
             else{
-                g.setColor(Color.red);
-                g.drawString("1", 260, 420);
+                g.setColor(Color.white);
+                g.drawString("1", 600, 320);
             } 
                 
         }
@@ -183,7 +173,7 @@ public class MatrRango2x2 extends JPanel{
                 }
                 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, /*"CI SONO DEI CAMPI VUOTI!"*/ "INSERIRE DEI VALORI VALIDI!");
+                JOptionPane.showMessageDialog(null, /*"CI SONO DEI CAMPI VUOTI!"*/ "Errore!");
             }
         }
     }
