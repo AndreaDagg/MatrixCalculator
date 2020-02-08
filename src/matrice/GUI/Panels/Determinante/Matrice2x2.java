@@ -46,7 +46,7 @@ public class Matrice2x2 extends JPanel{
         this.add(this.reset);
         
         this.indietro = new JButton("INDIETRO");
-        this.indietro.setBounds(20, 20, 180, 60);
+        this.indietro.setBounds(20, 100, 180, 60);
         this.indietro.addMouseListener(listner);
         this.indietro.setForeground(Color.BLACK);
         this.indietro.setBackground(new Color(144, 202, 249));
@@ -56,7 +56,7 @@ public class Matrice2x2 extends JPanel{
         for(int i = 0; i < 2; i ++){
             for(int j = 0; j < 2; j ++){
                 this.matrice[i][j] = new JTextField();
-                this.matrice[i][j].setBounds(480 + (spazioX * i), 90 + (spazioY * j), 102, 42);
+                this.matrice[i][j].setBounds(480 + (spazioX * i), 110 + (spazioY * j), 102, 42);
                 this.matrice[i][j].setBackground(Color.WHITE);
                 this.matrice[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice[i][j].setForeground(Color.BLACK);
@@ -74,15 +74,19 @@ public class Matrice2x2 extends JPanel{
         
         g.setColor(c);
         g.fillRect(400, 10, 440, 280);
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, 50));
+        g.drawString("Calcolo determinante di una matrice 2x2", 50, 60);
         
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(420, 70, 5, 160);  //verticale
+        g.fillRect(420, 100, 5, 160);  //verticale
         //g.fillRect(40, 70, 20, 5);
         //g.fillRect(40, 225, 20, 5);
         
         //parentesi dx
-        g.fillRect(815, 70, 5, 160);  //verticale
+        g.fillRect(815, 100, 5, 160);  //verticale
         //g.fillRect(420, 70, 20, 5);
         //g.fillRect(420, 225, 20, 5);
                
