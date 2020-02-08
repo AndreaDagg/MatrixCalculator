@@ -49,7 +49,7 @@ public class MainPanel extends JPanel{
         this.buttonDeterminante.setForeground(Color.BLACK);
         this.buttonDeterminante.setBackground(Color.LIGHT_GRAY);
         this.buttonDeterminante.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
-        this.add(this.buttonDeterminante);
+        this.add(this.buttonDeterminante); //Aggiungo il bottone al frame main se ci clicchi vai in mouse listner giu
         
         this.buttonOpAlg = new JButton("OPERAZIONI");
         this.buttonOpAlg.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
@@ -76,16 +76,14 @@ public class MainPanel extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        //Color c = new Color(0, 0, 0, 112);
-        //g.setColor(c);
-        //g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        Color c = new Color(255, 255, 255, 0);
+        g.setColor(c);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
        // g.setColor(Color.BLACK);
         //g.setFont(new Font("Castellar", Font.BOLD, 30));
-        
        // String scelta = "EFFETTUA LA TUA SCELTA:";
         //int lunghezza = scelta.length();
-        
        // g.drawString(scelta, (MainFrame.LARGHEZZA  - lunghezza) / 5, 45);
         g.drawImage(logo, this.X_IMMAGINE, this.Y_IMMAGINE, this.LARGHEZZA_IMMAGINE, this.ALTEZZA_IMMAGINE, null);
 
