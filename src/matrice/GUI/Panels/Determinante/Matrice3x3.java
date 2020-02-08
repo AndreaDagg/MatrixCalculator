@@ -178,7 +178,7 @@ public class Matrice3x3 extends JPanel{
                 }
                 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "INSERIRE DEI VALORI VALIDI!");
+                JOptionPane.showMessageDialog(null, "Errore!");
             }
         }
     }

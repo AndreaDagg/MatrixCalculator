@@ -177,7 +177,7 @@ public class Matrice2x2 extends JPanel{
                 }
                 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, /*"CI SONO DEI CAMPI VUOTI!"*/ "INSERIRE DEI VALORI VALIDI!");
+                JOptionPane.showMessageDialog(null, /*"CI SONO DEI CAMPI VUOTI!"*/ "Errore!");
             }
         }
     }
