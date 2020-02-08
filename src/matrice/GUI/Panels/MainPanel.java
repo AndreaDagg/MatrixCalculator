@@ -76,7 +76,7 @@ public class MainPanel extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 255, 255, 0);
+        Color c = new Color(255, 255, 255);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         

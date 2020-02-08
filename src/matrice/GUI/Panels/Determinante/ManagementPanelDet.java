@@ -88,7 +88,6 @@ public class ManagementPanelDet extends JPanel {
                 mainFrame.switchPanel(mainFrame.managementPanelDet, mainFrame.matrice4x4);
             }
             if (btn.equals(indietro))
-                mainFrame.managementPanelDet.setVisible(false);
                 mainFrame.switchPanel(mainFrame.managementPanelDet, mainFrame.mainPanel);
         }
     }
