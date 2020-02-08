@@ -18,6 +18,8 @@ import matrice.GUI.Panels.Rango.ManagementPanelRango;
 import matrice.GUI.Panels.Rango.MatrRango2x2;
 import matrice.GUI.Panels.Rango.MatrRango3x3;
 
+import java.awt.*;
+
 public class MainFrame extends JFrame{
     public static final int LARGHEZZA = 1200, ALTEZZA = 680;
     

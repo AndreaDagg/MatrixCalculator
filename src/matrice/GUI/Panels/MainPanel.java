@@ -33,56 +33,58 @@ public class MainPanel extends JPanel{
     public MainPanel(MainFrame pMainFrame){
         this.setSize(MainFrame.LARGHEZZA, MainFrame.ALTEZZA);
         this.setLayout(null);
+
         this.mainFrame = pMainFrame;
         mouseListner listner = new mouseListner();
+
+        Color mycolor = new Color(245, 244 ,245);
+        this.mainFrame.setBackground(mycolor);
         
         this.logo = Resources.getImage("/matrice/GUI/images/logo.png");
+
         
         this.buttonDeterminante = new JButton("DETERMINANTE");
         this.buttonDeterminante.setBounds(xPulsante / 2 - 220,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.buttonDeterminante.addMouseListener(listner);
-        this.buttonDeterminante.setForeground(Color.WHITE);
-        this.buttonDeterminante.setBackground(Color.BLACK);
+        this.buttonDeterminante.setForeground(Color.BLACK);
+        this.buttonDeterminante.setBackground(Color.LIGHT_GRAY);
         this.buttonDeterminante.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
-        this.add(this.buttonDeterminante);
+        this.add(this.buttonDeterminante); //Aggiungo il bottone al frame main se ci clicchi vai in mouse listner giu
         
         this.buttonOpAlg = new JButton("OPERAZIONI");
         this.buttonOpAlg.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.buttonOpAlg.addMouseListener(listner);
         this.add(this.buttonOpAlg);
-        this.buttonOpAlg.setBackground(Color.BLACK);
-        this.buttonOpAlg.setForeground(Color.WHITE);
+        this.buttonOpAlg.setBackground(Color.LIGHT_GRAY);
+
 
         this.rango = new JButton("RANGO");
         this.rango.setBounds(xPulsante / 2 + 220, yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.rango.addMouseListener(listner);
         this.add(rango);
-        this.rango.setForeground(Color.WHITE);
-        this.rango.setBackground(Color.BLACK);
+        this.rango.setForeground(Color.black);
+        this.rango.setBackground(Color.lightGray);
         
         this.uscita = new JButton("USCITA");
         this.uscita.setBounds(xPulsante / 2, yPulsante + 80, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.uscita.addMouseListener(listner);
         this.add(uscita);
-        this.uscita.setForeground(Color.BLACK);
-        this.uscita.setBackground(Color.WHITE);
+        this.uscita.setForeground(Color.red);
+        this.uscita.setBackground(Color.lightGray);
         
     }
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(0, 0, 0, 112);
+        Color c = new Color(255, 255, 255);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
-        g.setColor(Color.BLACK);
-        g.setFont(new Font("Castellar", Font.BOLD, 30));
-        
-        String scelta = "EFFETTUA LA TUA SCELTA:";
-        int lunghezza = scelta.length();
-        
-        g.drawString(scelta, (MainFrame.LARGHEZZA  - lunghezza) / 5, 45);
-        
+       // g.setColor(Color.BLACK);
+        //g.setFont(new Font("Castellar", Font.BOLD, 30));
+       // String scelta = "EFFETTUA LA TUA SCELTA:";
+        //int lunghezza = scelta.length();
+       // g.drawString(scelta, (MainFrame.LARGHEZZA  - lunghezza) / 5, 45);
         g.drawImage(logo, this.X_IMMAGINE, this.Y_IMMAGINE, this.LARGHEZZA_IMMAGINE, this.ALTEZZA_IMMAGINE, null);
 
     }
