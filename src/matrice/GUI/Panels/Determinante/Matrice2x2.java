@@ -38,7 +38,7 @@ public class Matrice2x2 extends JPanel{
         this.calcola.setBackground(Color.BLACK);
         this.add(this.calcola);
         
-        this.reset = new JButton("RESET");
+        this.reset = new JButton("Cancella");
         this.reset.setBounds(420 + 180 , 400, 180, 60);
         this.reset.addMouseListener(listner);
         this.reset.setForeground(Color.WHITE);
