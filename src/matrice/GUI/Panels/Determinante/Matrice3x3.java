@@ -33,31 +33,31 @@ public class Matrice3x3 extends JPanel{
         mouseListner listner = new mouseListner();
         
         this.calcola = new JButton("CALCOLA");
-        this.calcola.setBounds(545, 30, 180, 60);
+        this.calcola.setBounds(420, 400, 180, 60);
         this.calcola.addMouseListener(listner);
         this.calcola.setForeground(Color.WHITE);
         this.calcola.setBackground(Color.BLACK);
         this.add(this.calcola);
         
         this.reset = new JButton("RESET");
-        this.reset.setBounds(545, 120, 180, 60);
+        this.reset.setBounds(420 + 180, 400, 180, 60);
         this.reset.addMouseListener(listner);
         this.reset.setForeground(Color.WHITE);
         this.reset.setBackground(Color.BLACK);
         this.add(this.reset);
         
         this.indietro = new JButton("INDIETRO");
-        this.indietro.setBounds(545, 210, 180, 60);
+        this.indietro.setBounds(20, 20, 180, 60);
         this.indietro.addMouseListener(listner);
         this.indietro.setForeground(Color.BLACK);
-        this.indietro.setBackground(Color.WHITE);
+        this.indietro.setBackground(new Color(144, 202, 249));
         this.add(this.indietro);
         
         int spazioX = 140, spazioY = 80; 
         for(int i = 0; i < 3; i ++){
             for(int j = 0; j < 3; j ++){
                 this.matrice[i][j] = new JTextField();
-                this.matrice[i][j].setBounds(60 + (spazioX * i), 50 + (spazioY * j), 102, 42);
+                this.matrice[i][j].setBounds(410 + (spazioX * i), 50 + (spazioY * j), 102, 42);
                 this.matrice[i][j].setBackground(Color.WHITE);
                 this.matrice[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice[i][j].setForeground(Color.BLACK);
@@ -69,26 +69,26 @@ public class Matrice3x3 extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(144, 202, 249);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
-        g.setColor(Color.WHITE);
-        g.fillRect(20, 10, 460, 280);
+    /*    g.setColor(c);
+        g.fillRect(220, 10, 460, 280);*/
         
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(40, 30, 5, 240);  //verticale
-        g.fillRect(40, 30, 20, 5);  
-        g.fillRect(40, 265, 20, 5);  
+        g.fillRect(380, 30, 5, 240);  //verticale
+       // g.fillRect(40, 30, 20, 5);
+        //g.fillRect(40, 265, 20, 5);
         
         //parentesi dx
-        g.fillRect(455, 30, 5, 240);  //verticale
-        g.fillRect(440, 30, 20, 5);  
-        g.fillRect(440, 265, 20, 5);
+        g.fillRect(815, 30, 5, 240);  //verticale
+        //g.fillRect(440, 30, 20, 5);
+        //g.fillRect(440, 265, 20, 5);
                
         
-        //griglia
+        /*//griglia
         g.setColor(Color.GRAY);
         
         int spazioX = 20;
@@ -98,24 +98,29 @@ public class Matrice3x3 extends JPanel{
         }
         for(int i = 0; i < 24; i ++){
             g.fillRect(20 + (spazioX * i), 10, 1, 280);     //verticali
-        }
-        
-        Color c1 = new Color(255, 150, 0);
+        }*/
+
+        Color c1 = new Color(144, 202, 249);
         g.setColor(c1);
         g.fillRect( 0, 380, this.getWidth(), 230);
+
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+        g.drawString("Determinante: ", 420, 320);
         
         if(attivaDet){
             g.setColor(Color.BLACK);
             g.setFont(new Font(Font.SERIF, Font.ITALIC, 20));
-            g.drawString(n1 + " x " + "(" + n5 + " x " + n9 + " - " + n6 + " x " + n8 + ")", 20, 325);
-            g.drawString("- " + n2 + " x " + "(" + n4 + " x " + n9 + " - " + n6 + " x " + n7 + ")", 20, 348);             
-            g.drawString("+ " + n3 + " x " + "(" + n4 + " x " + n8 + " - " + n5 + " x " + n7 + ")", 20, 371);
+            g.drawString(n1 + " x " + "(" + n5 + " x " + n9 + " - " + n6 + " x " + n8 + ")" + "- " + n2 + " x "
+                    + "(" + n4 + " x " + n9 + " - " + n6 + " x " + n7 + ")" + "+ " + n3 + " x " + "(" + n4 + " x " + n8 + " - " + n5 + " x " + n7 + ")", 20, 600);
+
 
             
-            g.setFont(new Font(Font.SERIF, Font.ITALIC, 25));
-            g.drawString("Il determinante e': ", 20, 420);
-            g.setColor(Color.red);
-            g.drawString("" + det, 230, 420);
+   /*         g.setFont(new Font(Font.SERIF, Font.ITALIC, 25));
+            g.drawString("Il determinante e': ", 20, 420);*/
+            g.setColor(Color.white);
+            g.drawString("" + det,700, 320);
         }
             
     }

@@ -70,7 +70,7 @@ public class MatrRango3x3 extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(239, 83, 80);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
@@ -87,8 +87,8 @@ public class MatrRango3x3 extends JPanel{
         g.fillRect(455, 30, 5, 240);  //verticale
         g.fillRect(440, 30, 20, 5);  
         g.fillRect(440, 265, 20, 5);
-               
-        Color c1 = new Color(255, 150, 0);
+
+        Color c1 = new Color(239, 83, 80);
         g.setColor(c1);
         g.fillRect( 0, 380, this.getWidth(), 230);
         

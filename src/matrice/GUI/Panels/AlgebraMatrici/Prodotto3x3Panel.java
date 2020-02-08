@@ -1,4 +1,4 @@
-package matrice.GUI.Panels.Operazioni;
+package matrice.GUI.Panels.AlgebraMatrici;
 
 import matrice.GUI.Frame.MainFrame;
 import java.awt.Color;
@@ -11,61 +11,55 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class SumDiff3x3Panel extends JPanel{
+public class Prodotto3x3Panel extends JPanel{
     
     private MainFrame mainFrame;
     
-    private JButton buttonSomma;
-    private JButton buttonDiff;
+    private JButton buttonProdotto;
     private JButton reset1;
     private JButton reset2;
     private JButton home;
     
-    private boolean attivaSomma = false;
-    private boolean attivaDiff = false;
+    private boolean attivaProdotto = false;
     
     private JTextField[][] matrice = new JTextField[3][3];
     private JTextField[][] matrice1 = new JTextField[3][3];
     
+    private double n1, n2, n3, n4, n5, n6, n7, n8, n9;
+    private double n10, n11, n12, n13, n14, n15, n16, n17, n18;
+    
     private double[][] matrRisult = new double[3][3];
     
-    public SumDiff3x3Panel(MainFrame pMainFrame){
+    public Prodotto3x3Panel(MainFrame pMainFrame){
         this.setSize(MainFrame.LARGHEZZA, MainFrame.ALTEZZA);
         this.setLayout(null);
         this.mainFrame = pMainFrame;
         
         mouseListner listner = new mouseListner();
         
-        this.buttonSomma = new JButton("SOMMA");
-        this.buttonSomma.setBounds(20, 306, 145, 60);
-        this.buttonSomma.addMouseListener(listner);
-        this.buttonSomma.setForeground(Color.WHITE);
-        this.buttonSomma.setBackground(Color.BLACK);
-        this.add(this.buttonSomma);
-        
-        this.buttonDiff = new JButton("DIFFERENZA");
-        this.buttonDiff.setBounds(173, 306, 145, 60);
-        this.buttonDiff.addMouseListener(listner);
-        this.buttonDiff.setForeground(Color.WHITE);
-        this.buttonDiff.setBackground(Color.BLACK);
-        this.add(this.buttonDiff);
+        this.buttonProdotto = new JButton("PRODOTTO");
+        this.buttonProdotto.setBounds(20, 306, 145, 60);
+        this.buttonProdotto.addMouseListener(listner);
+        this.buttonProdotto.setForeground(Color.WHITE);
+        this.buttonProdotto.setBackground(Color.BLACK);
+        this.add(this.buttonProdotto);
         
         this.reset1 = new JButton("RESET 1");
-        this.reset1.setBounds(328, 306, 145, 60);
+        this.reset1.setBounds(225, 306, 145, 60);
         this.reset1.addMouseListener(listner);
         this.reset1.setForeground(Color.WHITE);
         this.reset1.setBackground(Color.BLACK);
         this.add(this.reset1);
         
         this.reset2 = new JButton("RESET 2");
-        this.reset2.setBounds(483, 306, 145, 60);
+        this.reset2.setBounds(430, 306, 145, 60);
         this.reset2.addMouseListener(listner);
         this.reset2.setForeground(Color.WHITE);
         this.reset2.setBackground(Color.BLACK);
         this.add(this.reset2);
         
         this.home = new JButton("INDIETRO");
-        this.home.setBounds(638, 306, 145, 60);
+        this.home.setBounds(635, 306, 145, 60);
         this.home.addMouseListener(listner);
         this.home.setForeground(Color.BLACK);
         this.home.setBackground(Color.WHITE);
@@ -100,7 +94,7 @@ public class SumDiff3x3Panel extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(129, 200, 132);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
@@ -140,20 +134,19 @@ public class SumDiff3x3Panel extends JPanel{
         }
         for(int i = 0; i < 40; i ++){
             g.fillRect(20 + (spazioX * i), 10, 1, 280);     //verticali
-        }        
-        
-        
-        Color c1 = new Color(255, 150, 0);
+        }
+
+
+        Color c1 = new Color(129, 200, 132);
         g.setColor(c1);
         g.fillRect( 0, 380, this.getWidth(), 230);
         
         g.setColor(Color.BLACK);
-        g.setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
         
         int spX = 180, spY = 60; 
-        if(attivaSomma == true){
+        if(attivaProdotto == true){
             g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-            g.drawString("La somma e': ", 20, 400);
+            g.drawString("Il prodotto e': ", 20, 400);
             for(int i = 0; i < 3; i ++){
                 for(int j = 0; j < 3; j ++){
                     g.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
@@ -161,40 +154,45 @@ public class SumDiff3x3Panel extends JPanel{
                 }
             }
         }
-        if(attivaDiff == true){
-            g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-            g.drawString("La differenza e': ", 20, 400);
-            for(int i = 0; i < 3; i ++){
-                for(int j = 0; j < 3; j ++){
-                    g.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
-                    g.drawString("" + matrRisult[i][j], 180 + (spX * i), 430 + (spY * j) );
-                }
-            }
-        }
+                
+    }
+    
+    private void prodotto(){
+        n1 = Double.parseDouble(matrice[0][0].getText());
+        n2 = Double.parseDouble(matrice[1][0].getText());
+        n3 = Double.parseDouble(matrice[2][0].getText());
+        n4 = Double.parseDouble(matrice[0][1].getText());
+        n5 = Double.parseDouble(matrice[1][1].getText());
+        n6 = Double.parseDouble(matrice[2][1].getText());
+        n7 = Double.parseDouble(matrice[0][2].getText());
+        n8 = Double.parseDouble(matrice[1][2].getText());
+        n9 = Double.parseDouble(matrice[2][2].getText());
         
-    }
-    
-    private void somma(){
-        for(int i = 0; i < 3; i ++){
-            for(int j = 0; j < 3; j ++){
-                matrRisult[i][j] = Double.parseDouble(matrice[i][j].getText()) + Double.parseDouble(matrice1[i][j].getText());
-            }
-        }
-        attivaSomma = true;
-    }
-    
-    private void differenza(){
-        for(int i = 0; i < 3; i ++){
-            for(int j = 0; j < 3; j ++){
-                matrRisult[i][j] = Double.parseDouble(matrice[i][j].getText()) - Double.parseDouble(matrice1[i][j].getText());
-            }
-        }
-        attivaDiff = true;
+        n10 = Double.parseDouble(matrice1[0][0].getText());
+        n11 = Double.parseDouble(matrice1[1][0].getText());
+        n12 = Double.parseDouble(matrice1[2][0].getText());
+        n13 = Double.parseDouble(matrice1[0][1].getText());
+        n14 = Double.parseDouble(matrice1[1][1].getText());
+        n15 = Double.parseDouble(matrice1[2][1].getText());
+        n16 = Double.parseDouble(matrice1[0][2].getText());
+        n17 = Double.parseDouble(matrice1[1][2].getText());
+        n18 = Double.parseDouble(matrice1[2][2].getText());
+        
+        matrRisult[0][0] = (n1*n10) + (n2*n13) + (n3*n16);
+        matrRisult[1][0] = (n1*n11) + (n2*n14) + (n3*n17);
+        matrRisult[2][0] = (n1*n12) + (n2*n15) + (n3*n18);
+        matrRisult[0][1] = (n4*n10) + (n5*n13) + (n6*n16);
+        matrRisult[1][1] = (n4*n11) + (n5*n14) + (n6*n17);
+        matrRisult[2][1] = (n4*n12) + (n5*n15) + (n6*n18);
+        matrRisult[0][2] = (n7*n10) + (n8*n13) + (n9*n16);
+        matrRisult[1][2] = (n7*n11) + (n8*n14) + (n9*n17);
+        matrRisult[2][2] = (n7*n12) + (n8*n15) + (n9*n18);
+        
+        attivaProdotto = true;
     }
     
     private void reset1(){
-        attivaSomma = false;
-        attivaDiff = false;
+        attivaProdotto = false;
         for(int i = 0; i < 3; i ++){
                 for(int j = 0; j < 3; j ++){
                     this.matrice[i][j].setText(null);
@@ -203,8 +201,7 @@ public class SumDiff3x3Panel extends JPanel{
     }
     
     private void reset2(){
-        attivaDiff = false;
-        attivaSomma = false;
+        attivaProdotto = false;
         for(int i = 0; i < 3; i ++){
                 for(int j = 0; j < 3; j ++){
                     this.matrice1[i][j].setText(null);
@@ -218,19 +215,9 @@ public class SumDiff3x3Panel extends JPanel{
             try{
                 JButton btn = (JButton) e.getSource();
             
-                if(btn.equals(buttonSomma)){
-                    //if(attivaDiff == false){
-                        attivaDiff = false;
-                        somma();
-                        repaint();
-                    //}
-                }
-                if(btn.equals(buttonDiff)){
-                    //if(attivaSomma == false){
-                        attivaSomma = false;
-                        differenza();
-                        repaint();
-                    //}
+                if(btn.equals(buttonProdotto)){
+                    prodotto();
+                    repaint();
                 }
                 if(btn.equals(reset1)){
                     reset1();
@@ -241,7 +228,7 @@ public class SumDiff3x3Panel extends JPanel{
                     repaint();
                 }
                 if(btn.equals(home)){
-                    mainFrame.switchPanel(mainFrame.sumDiff3x3Panel, mainFrame.managementPanelOper);
+                    mainFrame.switchPanel(mainFrame.prodotto3x3, mainFrame.managementPanelOper);
                     reset1();
                     reset2();
                     repaint();

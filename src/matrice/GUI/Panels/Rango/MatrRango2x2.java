@@ -68,7 +68,7 @@ public class MatrRango2x2 extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(239, 83, 80);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
@@ -98,8 +98,8 @@ public class MatrRango2x2 extends JPanel{
         for(int i = 0; i < 23; i ++){
             g.fillRect(20 + (spazioX * i), 10, 1, 280);     //verticali
         }
-        
-        Color c1 = new Color(255, 150, 0);
+
+        Color c1 = new Color(239, 83, 80);
         g.setColor(c1);
         g.fillRect( 0, 380, this.getWidth(), 230);
         

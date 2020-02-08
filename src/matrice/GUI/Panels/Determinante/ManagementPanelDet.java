@@ -64,13 +64,13 @@ public class ManagementPanelDet extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Color c = new Color(255, 255, 255);
+        Color c = new Color(144, 202, 249);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
         g.setColor(Color.RED);
         g.setFont(new Font("Castellar", Font.ITALIC, 50));
-        g.drawString("Quale ordine? ", 62, 45);
+        g.drawString("Calcolo il determinate di ordine... ", 62, 62);
     }
 
     private class mouseListner extends MouseAdapter {

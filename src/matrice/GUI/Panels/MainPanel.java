@@ -51,7 +51,7 @@ public class MainPanel extends JPanel{
         this.buttonDeterminante.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
         this.add(this.buttonDeterminante); //Aggiungo il bottone al frame main se ci clicchi vai in mouse listner giu
         
-        this.buttonOpAlg = new JButton("OPERAZIONI");
+        this.buttonOpAlg = new JButton("ALGEBRA");
         this.buttonOpAlg.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.buttonOpAlg.addMouseListener(listner);
         this.add(this.buttonOpAlg);

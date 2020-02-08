@@ -54,7 +54,7 @@ public class ManagementPanelRango extends JPanel{
     
     @Override
     protected void paintComponent(Graphics g){
-        Color c = new Color(255, 200, 0);
+        Color c = new Color(239, 83, 80);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
