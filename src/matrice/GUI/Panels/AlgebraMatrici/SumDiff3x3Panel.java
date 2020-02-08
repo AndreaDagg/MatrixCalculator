@@ -36,39 +36,39 @@ public class SumDiff3x3Panel extends JPanel{
         
         mouseListner listner = new mouseListner();
         
-        this.buttonSomma = new JButton("SOMMA");
-        this.buttonSomma.setBounds(20, 306, 145, 60);
+        this.buttonSomma = new JButton(" + ");
+        this.buttonSomma.setBounds(260, 406, 145, 60);
         this.buttonSomma.addMouseListener(listner);
         this.buttonSomma.setForeground(Color.WHITE);
         this.buttonSomma.setBackground(Color.BLACK);
         this.add(this.buttonSomma);
         
-        this.buttonDiff = new JButton("DIFFERENZA");
-        this.buttonDiff.setBounds(173, 306, 145, 60);
+        this.buttonDiff = new JButton(" - ");
+        this.buttonDiff.setBounds(260+145, 406, 145, 60);
         this.buttonDiff.addMouseListener(listner);
         this.buttonDiff.setForeground(Color.WHITE);
         this.buttonDiff.setBackground(Color.BLACK);
         this.add(this.buttonDiff);
         
-        this.reset1 = new JButton("RESET 1");
-        this.reset1.setBounds(328, 306, 145, 60);
+        this.reset1 = new JButton("Cancella 1");
+        this.reset1.setBounds(150, 306, 145, 60);
         this.reset1.addMouseListener(listner);
         this.reset1.setForeground(Color.WHITE);
         this.reset1.setBackground(Color.BLACK);
         this.add(this.reset1);
         
-        this.reset2 = new JButton("RESET 2");
-        this.reset2.setBounds(483, 306, 145, 60);
+        this.reset2 = new JButton("Cancella 2");
+        this.reset2.setBounds(510, 306, 145, 60);
         this.reset2.addMouseListener(listner);
         this.reset2.setForeground(Color.WHITE);
         this.reset2.setBackground(Color.BLACK);
         this.add(this.reset2);
         
         this.home = new JButton("INDIETRO");
-        this.home.setBounds(638, 306, 145, 60);
+        this.home.setBounds(333, 490, 145, 60);
         this.home.addMouseListener(listner);
         this.home.setForeground(Color.BLACK);
-        this.home.setBackground(Color.WHITE);
+        this.home.setBackground(new Color(129, 200, 132));
         this.add(this.home);
         
         
@@ -76,7 +76,7 @@ public class SumDiff3x3Panel extends JPanel{
         for(int i = 0; i < 3; i ++){
             for(int j = 0; j < 3; j ++){
                 this.matrice[i][j] = new JTextField();
-                this.matrice[i][j].setBounds(60 + (spazioX * i), 50 + (spazioY * j), 102, 42);
+                this.matrice[i][j].setBounds(60 + (spazioX * i), 80 + (spazioY * j), 102, 42);
                 this.matrice[i][j].setBackground(Color.WHITE);
                 this.matrice[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice[i][j].setForeground(Color.BLACK);
@@ -87,7 +87,7 @@ public class SumDiff3x3Panel extends JPanel{
         for(int i = 0; i < 3; i ++){
             for(int j = 0; j < 3; j ++){
                 this.matrice1[i][j] = new JTextField();
-                this.matrice1[i][j].setBounds(420 + (spazioX * i), 50 + (spazioY * j), 102, 42);
+                this.matrice1[i][j].setBounds(420 + (spazioX * i), 80 + (spazioY * j), 102, 42);
                 this.matrice1[i][j].setBackground(Color.WHITE);
                 this.matrice1[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice1[i][j].setForeground(Color.BLACK);
@@ -104,33 +104,33 @@ public class SumDiff3x3Panel extends JPanel{
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
-        g.setColor(Color.WHITE);
+        /*g.setColor(Color.WHITE);
         g.fillRect(20, 10, 760, 280);
-        
+        */
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(40, 30, 5, 240);  //verticale
-        g.fillRect(40, 30, 20, 5);  
-        g.fillRect(40, 265, 20, 5);  
+        g.fillRect(40, 80, 5, 240);  //verticale
+        //g.fillRect(40, 30, 20, 5);
+        //g.fillRect(40, 265, 20, 5);
         
         //parentesi dx
-        g.fillRect(392, 30, 5, 240);  //verticale
-        g.fillRect(376, 30, 20, 5);  
-        g.fillRect(376, 265, 20, 5);
+        g.fillRect(392, 80, 5, 240);  //verticale
+        //g.fillRect(376, 30, 20, 5);
+        //g.fillRect(376, 265, 20, 5);
                
         //seconde parentesi
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(404, 30, 5, 240);  //verticale
-        g.fillRect(406, 30, 20, 5);  
-        g.fillRect(406, 265, 20, 5);  
+        g.fillRect(404, 80, 5, 240);  //verticale
+        //g.fillRect(406, 30, 20, 5);
+        //g.fillRect(406, 265, 20, 5);
         
         //parentesi dx
-        g.fillRect(756, 30, 5, 240);  //verticale
-        g.fillRect(740, 30, 20, 5);  
-        g.fillRect(740, 265, 20, 5);
+        g.fillRect(756, 80, 5, 240);  //verticale
+        //g.fillRect(740, 30, 20, 5);
+        //g.fillRect(740, 265, 20, 5);
         
-        //griglia
+/*        //griglia
         g.setColor(Color.GRAY);
         
         int spazioX = 20;
@@ -140,7 +140,7 @@ public class SumDiff3x3Panel extends JPanel{
         }
         for(int i = 0; i < 40; i ++){
             g.fillRect(20 + (spazioX * i), 10, 1, 280);     //verticali
-        }
+        }*/
 
         Color c1 = new Color(129, 200, 132);
         g.setColor(c1);
@@ -149,26 +149,33 @@ public class SumDiff3x3Panel extends JPanel{
         g.setColor(Color.BLACK);
         g.setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
         
-        int spX = 180, spY = 60; 
+        int spX = 90, spY = 60;
         if(attivaSomma == true){
             g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-            g.drawString("La somma e': ", 20, 400);
+            g.drawString("Somma ", 910, 360);
             for(int i = 0; i < 3; i ++){
                 for(int j = 0; j < 3; j ++){
                     g.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
-                    g.drawString("" + matrRisult[i][j], 180 + (spX * i), 430 + (spY * j) );
+                    g.drawString("" + matrRisult[i][j], 900 + (spX * i), 150 + (spY * j) );
                 }
             }
         }
         if(attivaDiff == true){
             g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-            g.drawString("La differenza e': ", 20, 400);
+            g.drawString("Differenza ", 910, 360);
             for(int i = 0; i < 3; i ++){
                 for(int j = 0; j < 3; j ++){
                     g.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
-                    g.drawString("" + matrRisult[i][j], 180 + (spX * i), 430 + (spY * j) );
+                    g.drawString("" + matrRisult[i][j], 900 + (spX * i), 150 + (spY * j) );
                 }
             }
+        }
+        if (attivaDiff == true || attivaSomma == true){
+            g.setColor(Color.BLACK);
+            g.setFont(new Font(Font.DIALOG, Font.PLAIN, 30));
+            g.drawString("=", 800, 220);
+            g.fillRect(855, 80, 5, 240);  //verticale
+            g.fillRect(1140, 80, 5, 240);  //verticale
         }
         
     }
