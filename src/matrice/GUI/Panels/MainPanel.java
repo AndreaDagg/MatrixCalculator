@@ -44,27 +44,26 @@ public class MainPanel extends JPanel{
 
 
         this.buttonDeterminante = new JButton("DETERMINANTE");
-
-        this.buttonDeterminante.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.buttonDeterminante.setBounds(660, 435, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
         this.buttonDeterminante.addMouseListener(listner);
         this.buttonDeterminante.setForeground(Color.BLACK);
-        this.buttonDeterminante.setBackground(Color.LIGHT_GRAY);
+        this.buttonDeterminante.setBackground(new Color(144, 202, 249));
         this.buttonDeterminante.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
         this.add(this.buttonDeterminante); //Aggiungo il bottone al frame main se ci clicchi vai in mouse listner giu
 
         this.buttonOpAlg = new JButton("OPERAZIONI ALGEBRICHE");
-        this.buttonOpAlg.setBounds(xPulsante / 2 - 220,yPulsante, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
+        this.buttonOpAlg.setBounds(660, 330, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
         this.buttonOpAlg.addMouseListener(listner);
-        this.buttonOpAlg.setBackground(Color.LIGHT_GRAY);
+        this.buttonOpAlg.setBackground(new Color(129, 200, 132));
         this.buttonOpAlg.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
         this.add(this.buttonOpAlg);
 
 
         this.rango = new JButton("RANGO");
-        this.rango.setBounds(xPulsante / 2 + 195, yPulsante, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
+        this.rango.setBounds(660, 540, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
         this.rango.addMouseListener(listner);
         this.rango.setForeground(Color.black);
-        this.rango.setBackground(Color.lightGray);
+        this.rango.setBackground(new Color(239, 83, 80));
         this.rango.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
         this.add(rango);
 
@@ -85,12 +84,15 @@ public class MainPanel extends JPanel{
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
-       // g.setColor(Color.BLACK);
-        //g.setFont(new Font("Castellar", Font.BOLD, 30));
+        g.setColor(Color.BLACK);
+       g.setFont(new Font("Castellar", Font.BOLD, 30));
        // String scelta = "EFFETTUA LA TUA SCELTA:";
         //int lunghezza = scelta.length();
        // g.drawString(scelta, (MainFrame.LARGHEZZA  - lunghezza) / 5, 45);
         g.drawImage(logo, this.X_IMMAGINE, 10, this.LARGHEZZA_IMMAGINE, this.ALTEZZA_IMMAGINE, null);
+        g.drawString("Somma, Differenza, Prodotto o Inversa:", 20, 370);
+        g.drawString("Calcolo del determinante: ", 20, 470);
+        g.drawString("Calcolo del rango: ", 20, 580);
 
     }
 
