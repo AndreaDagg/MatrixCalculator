@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Prodotto3x3Panel extends JPanel {
+public class Prodotto2x2 extends JPanel {
 
     private MainFrame mainFrame;
 
@@ -31,12 +31,12 @@ public class Prodotto3x3Panel extends JPanel {
 
     private double[][] matrRisult = new double[3][3];
 
-    public Prodotto3x3Panel(MainFrame pMainFrame) {
+    public Prodotto2x2(MainFrame pMainFrame) {
         this.setSize(MainFrame.LARGHEZZA, MainFrame.ALTEZZA);
         this.setLayout(null);
         this.mainFrame = pMainFrame;
 
-        mouseListner listner = new mouseListner();
+        Prodotto2x2.mouseListner listner = new Prodotto2x2.mouseListner();
 
         this.buttonProdotto = new JButton("MOLTIPLICA");
         this.buttonProdotto.setBounds(333, 410, 145, 60);
@@ -67,11 +67,11 @@ public class Prodotto3x3Panel extends JPanel {
         this.add(this.home);
 
 
-        int spazioX = 110, spazioY = 80;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        int spazioX = 180, spazioY = 80;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice[i][j] = new JTextField();
-                this.matrice[i][j].setBounds(60 + (spazioX * i), 80 + (spazioY * j), 102, 42);
+                this.matrice[i][j].setBounds(80 + (spazioX * i), 110 + (spazioY * j), 102, 42);
                 this.matrice[i][j].setBackground(Color.WHITE);
                 this.matrice[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice[i][j].setForeground(Color.BLACK);
@@ -79,10 +79,10 @@ public class Prodotto3x3Panel extends JPanel {
             }
         }
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice1[i][j] = new JTextField();
-                this.matrice1[i][j].setBounds(420 + (spazioX * i), 80 + (spazioY * j), 102, 42);
+                this.matrice1[i][j].setBounds(440 + (spazioX * i), 110 + (spazioY * j), 102, 42);
                 this.matrice1[i][j].setBackground(Color.WHITE);
                 this.matrice1[i][j].setFont(new Font(Font.DIALOG, Font.ITALIC, 16));
                 this.matrice1[i][j].setForeground(Color.BLACK);
@@ -101,27 +101,18 @@ public class Prodotto3x3Panel extends JPanel {
 
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(40, 80, 5, 240);  //verticale
-        //g.fillRect(40, 30, 20, 5);
-        //g.fillRect(40, 265, 20, 5);
+        g.fillRect(40, 80, 5, 200);  //verticale
 
         //parentesi dx
-        g.fillRect(392, 80, 5, 240);  //verticale
-        //g.fillRect(376, 30, 20, 5);
-        //g.fillRect(376, 265, 20, 5);
+        g.fillRect(392, 80, 5, 200);  //verticale
 
         //seconde parentesi
         //parentesi sx
         g.setColor(Color.BLACK);
-        g.fillRect(404, 80, 5, 240);  //verticale
-        //g.fillRect(406, 30, 20, 5);
-        //g.fillRect(406, 265, 20, 5);
+        g.fillRect(404, 80, 5, 200);  //verticale
 
         //parentesi dx
-        g.fillRect(756, 80, 5, 240);  //verticale
-        //g.fillRect(740, 30, 20, 5);
-        //g.fillRect(740, 265, 20, 5);
-
+        g.fillRect(756, 80, 5, 200);  //verticale
 
         Color c1 = new Color(129, 200, 132);
         g.setColor(c1);
@@ -131,10 +122,8 @@ public class Prodotto3x3Panel extends JPanel {
 
         int spX = 80, spY = 60;
         if (attivaProdotto == true) {
-            //g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-            //g.drawString("Il prodotto e': ", 20, 400);
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
                     g.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
                     g.drawString("" + matrRisult[i][j], 900 + (spX * i), 150 + (spY * j));
                 }
@@ -142,8 +131,8 @@ public class Prodotto3x3Panel extends JPanel {
             g.setColor(Color.BLACK);
             g.setFont(new Font(Font.DIALOG, Font.PLAIN, 30));
             g.drawString("=", 800, 220);
-            g.fillRect(855, 80, 5, 240);  //verticale
-            g.fillRect(1140, 80, 5, 240);  //verticale
+            g.fillRect(855, 80, 5, 200);
+            g.fillRect(1140, 80, 5, 200);
         }
 
     }
@@ -152,41 +141,27 @@ public class Prodotto3x3Panel extends JPanel {
         //Righe per colonne
         n1 = Double.parseDouble(matrice[0][0].getText());
         n2 = Double.parseDouble(matrice[1][0].getText());
-        n3 = Double.parseDouble(matrice[2][0].getText());
+
         n4 = Double.parseDouble(matrice[0][1].getText());
         n5 = Double.parseDouble(matrice[1][1].getText());
-        n6 = Double.parseDouble(matrice[2][1].getText());
-        n7 = Double.parseDouble(matrice[0][2].getText());
-        n8 = Double.parseDouble(matrice[1][2].getText());
-        n9 = Double.parseDouble(matrice[2][2].getText());
 
         n10 = Double.parseDouble(matrice1[0][0].getText());
         n11 = Double.parseDouble(matrice1[1][0].getText());
-        n12 = Double.parseDouble(matrice1[2][0].getText());
         n13 = Double.parseDouble(matrice1[0][1].getText());
         n14 = Double.parseDouble(matrice1[1][1].getText());
-        n15 = Double.parseDouble(matrice1[2][1].getText());
-        n16 = Double.parseDouble(matrice1[0][2].getText());
-        n17 = Double.parseDouble(matrice1[1][2].getText());
-        n18 = Double.parseDouble(matrice1[2][2].getText());
 
-        matrRisult[0][0] = (n1 * n10) + (n2 * n13) + (n3 * n16);
-        matrRisult[1][0] = (n1 * n11) + (n2 * n14) + (n3 * n17);
-        matrRisult[2][0] = (n1 * n12) + (n2 * n15) + (n3 * n18);
-        matrRisult[0][1] = (n4 * n10) + (n5 * n13) + (n6 * n16);
-        matrRisult[1][1] = (n4 * n11) + (n5 * n14) + (n6 * n17);
-        matrRisult[2][1] = (n4 * n12) + (n5 * n15) + (n6 * n18);
-        matrRisult[0][2] = (n7 * n10) + (n8 * n13) + (n9 * n16);
-        matrRisult[1][2] = (n7 * n11) + (n8 * n14) + (n9 * n17);
-        matrRisult[2][2] = (n7 * n12) + (n8 * n15) + (n9 * n18);
+        matrRisult[0][0] = (n1 * n10) + (n2 * n13);
+        matrRisult[1][0] = (n1 * n11) + (n2 * n14);
+        matrRisult[0][1] = (n4 * n10) + (n5 * n13) ;
+        matrRisult[1][1] = (n4 * n11) + (n5 * n14) ;
 
         attivaProdotto = true;
     }
 
     private void reset1() {
         attivaProdotto = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice[i][j].setText(null);
             }
         }
@@ -194,8 +169,8 @@ public class Prodotto3x3Panel extends JPanel {
 
     private void reset2() {
         attivaProdotto = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice1[i][j].setText(null);
             }
         }
@@ -220,14 +195,14 @@ public class Prodotto3x3Panel extends JPanel {
                     repaint();
                 }
                 if (btn.equals(home)) {
-                    mainFrame.switchPanel(mainFrame.prodotto3x3, mainFrame.managementPanelOper);
+                    mainFrame.switchPanel(mainFrame.prodotto2x2, mainFrame.managementPanelOper);
                     reset1();
                     reset2();
                     repaint();
                 }
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "INSERIRE DEI VALORI VALIDI!");
+                JOptionPane.showMessageDialog(null, "Errore!");
             }
         }
     }
