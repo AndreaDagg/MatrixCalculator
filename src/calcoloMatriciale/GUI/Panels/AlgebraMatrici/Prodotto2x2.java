@@ -160,8 +160,8 @@ public class Prodotto2x2 extends JPanel {
 
     private void reset1() {
         attivaProdotto = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice[i][j].setText(null);
             }
         }
@@ -169,8 +169,8 @@ public class Prodotto2x2 extends JPanel {
 
     private void reset2() {
         attivaProdotto = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice1[i][j].setText(null);
             }
         }

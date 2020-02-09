@@ -178,8 +178,8 @@ public class SumDiff2x2Panel extends JPanel {
     private void reset1() {
         attivaSomma = false;
         attivaDiff = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice1[i][j].setText(null);
             }
         }
@@ -188,8 +188,8 @@ public class SumDiff2x2Panel extends JPanel {
     private void reset2() {
         attivaDiff = false;
         attivaSomma = false;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 this.matrice2[i][j].setText(null);
             }
         }
