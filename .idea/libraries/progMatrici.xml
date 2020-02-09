@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="progMatrici">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/progMatrici.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
