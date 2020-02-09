@@ -12,24 +12,24 @@ import javax.swing.JPanel;
 import matrice.utils.Resources;
 
 public class MainPanel extends JPanel{
-    
+
     private final MainFrame mainFrame;
     private final JButton buttonDeterminante;
     private final JButton buttonOpAlg;
     private final JButton rango;
     private final JButton uscita;
-    
+
     private final Image logo;
-    
+
     private final int LARGHEZZA_IMMAGINE = 300, ALTEZZA_IMMAGINE = 300;
-    private final int X_IMMAGINE = (MainFrame.LARGHEZZA - this.LARGHEZZA_IMMAGINE) / 2, 
+    private final int X_IMMAGINE = (MainFrame.LARGHEZZA - this.LARGHEZZA_IMMAGINE) / 2,
                       Y_IMMAGINE = 80;
-    
+
     private static final int WIDTH_PULSANTE = 180, HEIGHT_PULSANTE = 60;
-    private static final int xPulsante = (MainFrame.LARGHEZZA - WIDTH_PULSANTE), 
+    private static final int xPulsante = (MainFrame.LARGHEZZA - WIDTH_PULSANTE),
                              yPulsante = 430;
-    
-    
+
+
     public MainPanel(MainFrame pMainFrame){
         this.setSize(MainFrame.LARGHEZZA, MainFrame.ALTEZZA);
         this.setLayout(null);
@@ -39,47 +39,52 @@ public class MainPanel extends JPanel{
 
         Color mycolor = new Color(245, 244 ,245);
         this.mainFrame.setBackground(mycolor);
-        
+
         this.logo = Resources.getImage("/matrice/GUI/images/logo.png");
 
-        
+
         this.buttonDeterminante = new JButton("DETERMINANTE");
-        this.buttonDeterminante.setBounds(xPulsante / 2 - 220,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+
+        this.buttonDeterminante.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.buttonDeterminante.addMouseListener(listner);
         this.buttonDeterminante.setForeground(Color.BLACK);
         this.buttonDeterminante.setBackground(Color.LIGHT_GRAY);
         this.buttonDeterminante.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
         this.add(this.buttonDeterminante); //Aggiungo il bottone al frame main se ci clicchi vai in mouse listner giu
-        
-        this.buttonOpAlg = new JButton("ALGEBRA");
-        this.buttonOpAlg.setBounds(xPulsante / 2,yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+
+        this.buttonOpAlg = new JButton("OPERAZIONI ALGEBRICHE");
+        this.buttonOpAlg.setBounds(xPulsante / 2 - 220,yPulsante, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
         this.buttonOpAlg.addMouseListener(listner);
-        this.add(this.buttonOpAlg);
         this.buttonOpAlg.setBackground(Color.LIGHT_GRAY);
+        this.buttonOpAlg.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
+        this.add(this.buttonOpAlg);
 
 
         this.rango = new JButton("RANGO");
-        this.rango.setBounds(xPulsante / 2 + 220, yPulsante, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.rango.setBounds(xPulsante / 2 + 195, yPulsante, WIDTH_PULSANTE + 25, HEIGHT_PULSANTE);
         this.rango.addMouseListener(listner);
-        this.add(rango);
         this.rango.setForeground(Color.black);
         this.rango.setBackground(Color.lightGray);
-        
+        this.rango.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
+        this.add(rango);
+
+
         this.uscita = new JButton("USCITA");
         this.uscita.setBounds(xPulsante / 2, yPulsante + 80, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.uscita.addMouseListener(listner);
-        this.add(uscita);
         this.uscita.setForeground(Color.red);
         this.uscita.setBackground(Color.lightGray);
-        
+        this.uscita.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
+        this.add(uscita);
+
     }
-    
+
     @Override
     protected void paintComponent(Graphics g){
         Color c = new Color(255, 255, 255);
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
-        
+
        // g.setColor(Color.BLACK);
         //g.setFont(new Font("Castellar", Font.BOLD, 30));
        // String scelta = "EFFETTUA LA TUA SCELTA:";
@@ -89,12 +94,12 @@ public class MainPanel extends JPanel{
 
     }
 
-    
+
     public class mouseListner extends MouseAdapter{
         @Override
         public void mouseClicked(MouseEvent e){
             JButton btn = (JButton) e.getSource();
-            
+
             if(btn.equals(buttonDeterminante)){
                 mainFrame.switchPanel(mainFrame.mainPanel, mainFrame.managementPanelDet);
             }
@@ -104,7 +109,7 @@ public class MainPanel extends JPanel{
             if(btn.equals(rango)){
                 mainFrame.switchPanel(mainFrame.mainPanel, mainFrame.managementPanelRango);
             }
-            
+
             if(btn.equals(uscita))
                 System.exit(0);
         }
