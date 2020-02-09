@@ -21,7 +21,7 @@ public class MainPanel extends JPanel{
 
     private final Image logo;
 
-    private final int LARGHEZZA_IMMAGINE = 300, ALTEZZA_IMMAGINE = 300;
+    private final int LARGHEZZA_IMMAGINE = 550, ALTEZZA_IMMAGINE = 300;
     private final int X_IMMAGINE = (MainFrame.LARGHEZZA - this.LARGHEZZA_IMMAGINE) / 2,
                       Y_IMMAGINE = 80;
 
@@ -40,7 +40,7 @@ public class MainPanel extends JPanel{
         Color mycolor = new Color(245, 244 ,245);
         this.mainFrame.setBackground(mycolor);
 
-        this.logo = Resources.getImage("/matrice/GUI/images/logo.png");
+        this.logo = Resources.getImage("/matrice/GUI/images/homimg.png");
 
 
         this.buttonDeterminante = new JButton("DETERMINANTE");
@@ -75,7 +75,7 @@ public class MainPanel extends JPanel{
         this.uscita.setForeground(Color.red);
         this.uscita.setBackground(Color.lightGray);
         this.uscita.setFont(new Font("Lucida Fax", Font.ITALIC, 13));
-        this.add(uscita);
+        //this.add(uscita);
 
     }
 
@@ -90,7 +90,7 @@ public class MainPanel extends JPanel{
        // String scelta = "EFFETTUA LA TUA SCELTA:";
         //int lunghezza = scelta.length();
        // g.drawString(scelta, (MainFrame.LARGHEZZA  - lunghezza) / 5, 45);
-        g.drawImage(logo, this.X_IMMAGINE, this.Y_IMMAGINE, this.LARGHEZZA_IMMAGINE, this.ALTEZZA_IMMAGINE, null);
+        g.drawImage(logo, this.X_IMMAGINE, 10, this.LARGHEZZA_IMMAGINE, this.ALTEZZA_IMMAGINE, null);
 
     }
 
