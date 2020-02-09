@@ -29,24 +29,24 @@ public class ManagementPanelRango extends JPanel{
         mouseListner listner = new mouseListner();
         
         this.matrici2x2 = new JButton("2x2");
-        this.matrici2x2.setBounds((MainFrame.LARGHEZZA - WIDTH_PULSANTE) / 3, MainFrame.ALTEZZA / 4, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.matrici2x2.setBounds(580, 120, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.matrici2x2.addMouseListener(listner);
-        this.matrici2x2.setForeground(Color.WHITE);
-        this.matrici2x2.setBackground(Color.BLACK);
+        this.matrici2x2.setForeground(Color.BLACK);
+        this.matrici2x2.setBackground(Color.WHITE);
         this.add(this.matrici2x2);
         
         this.matrici3x3 = new JButton("3x3");
-        this.matrici3x3.setBounds((MainFrame.LARGHEZZA - WIDTH_PULSANTE) / 3 + 205, MainFrame.ALTEZZA / 4, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.matrici3x3.setBounds(580, 330, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.matrici3x3.addMouseListener(listner);
-        this.matrici3x3.setForeground(Color.WHITE);
-        this.matrici3x3.setBackground(Color.BLACK);
+        this.matrici3x3.setForeground(Color.BLACK);
+        this.matrici3x3.setBackground(Color.WHITE);
         this.add(this.matrici3x3);
         
-        this.indietro = new JButton("INDIETRO");
-        this.indietro.setBounds((MainFrame.LARGHEZZA - WIDTH_PULSANTE) / 2, 450, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.indietro = new JButton("HOME");
+        this.indietro.setBounds(20, 550, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.indietro.addMouseListener(listner);
         this.indietro.setForeground(Color.BLACK);
-        this.indietro.setBackground(Color.WHITE);
+        this.indietro.setBackground(new Color(239, 83, 80));
         this.add(indietro);
         
         
@@ -60,7 +60,9 @@ public class ManagementPanelRango extends JPanel{
         
         g.setColor(Color.BLACK);
         g.setFont(new Font("Castellar", Font.BOLD, 30));
-        g.drawString("IMPOSTA L'ORDINE DELLA MATRICE:", 62, 45);
+        g.drawString("Calcolo rango matrice di ordine:", 20, 150);
+        g.drawString("Calcolo rango matrice di ordine:", 20, 370);
+
     }
     
     private class mouseListner extends MouseAdapter{

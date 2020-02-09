@@ -32,31 +32,31 @@ public class ManagementPanelDet extends JPanel {
         int posizioneBottone = 180;
 
         this.matrici2x2 = new JButton("2x2");
-        this.matrici2x2.setBounds(posizioneBottone, MainFrame.ALTEZZA / 4, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.matrici2x2.setBounds(600, 60, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.matrici2x2.addMouseListener(listner);
-        this.matrici2x2.setForeground(Color.WHITE);
-        this.matrici2x2.setBackground(Color.BLACK);
+        this.matrici2x2.setForeground(Color.black);
+        this.matrici2x2.setBackground(Color.WHITE);
         this.add(this.matrici2x2);
 
         this.matrici3x3 = new JButton("3x3");
-        this.matrici3x3.setBounds(posizioneBottone + 300, MainFrame.ALTEZZA / 4, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.matrici3x3.setBounds(600, 205, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.matrici3x3.addMouseListener(listner);
-        this.matrici3x3.setForeground(Color.WHITE);
-        this.matrici3x3.setBackground(Color.BLACK);
+        this.matrici3x3.setForeground(Color.black);
+        this.matrici3x3.setBackground(Color.white);
         this.add(this.matrici3x3);
 
         this.matrici4x4 = new JButton("4x4");
-        this.matrici4x4.setBounds(posizioneBottone + 600, MainFrame.ALTEZZA / 4, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.matrici4x4.setBounds(600, 360, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.matrici4x4.addMouseListener(listner);
-        this.matrici4x4.setForeground(Color.WHITE);
-        this.matrici4x4.setBackground(Color.BLACK);
+        this.matrici4x4.setForeground(Color.black);
+        this.matrici4x4.setBackground(Color.white);
         this.add(this.matrici4x4);
 
-        this.indietro = new JButton("INDIETRO");
-        this.indietro.setBounds((MainFrame.LARGHEZZA - WIDTH_PULSANTE) / 2, 450, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.indietro = new JButton("HOME");
+        this.indietro.setBounds(20, 550, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.indietro.addMouseListener(listner);
         this.indietro.setForeground(Color.BLACK);
-        this.indietro.setBackground(Color.WHITE);
+        this.indietro.setBackground( new Color(144, 202, 249));
         this.add(indietro);
 
 
@@ -68,9 +68,12 @@ public class ManagementPanelDet extends JPanel {
         g.setColor(c);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
-        g.setColor(Color.RED);
-        g.setFont(new Font("Castellar", Font.ITALIC, 50));
-        g.drawString("Calcolo il determinate di ordine... ", 62, 62);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Castellar", Font.BOLD, 32));
+
+        g.drawString("Determinante matrice di ordine: ", 20, 100);
+        g.drawString("Determinante matrice di ordine: ", 20, 250);
+        g.drawString("Determinante matrice di ordine: ",20, 400);
     }
 
     private class mouseListner extends MouseAdapter {
