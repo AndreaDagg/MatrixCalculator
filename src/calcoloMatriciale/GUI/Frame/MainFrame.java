@@ -2,18 +2,13 @@ package calcoloMatriciale.GUI.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import calcoloMatriciale.GUI.Panels.AlgebraMatrici.*;
 import calcoloMatriciale.GUI.Panels.MainPanel;
 import calcoloMatriciale.GUI.Panels.Determinante.ManagementPanelDet;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.ManagementPanelOper;
 import calcoloMatriciale.GUI.Panels.Determinante.Matrice2x2;
 import calcoloMatriciale.GUI.Panels.Determinante.Matrice3x3;
 import calcoloMatriciale.GUI.Panels.Determinante.Matrice4x4;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.Inversa2x2;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.Inversa3x3;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.Prodotto3x3Panel;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.Prodotto4x4Panel;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.SumDiff3x3Panel;
-import calcoloMatriciale.GUI.Panels.AlgebraMatrici.SumDiff4x4Panel;
 import calcoloMatriciale.GUI.Panels.Rango.ManagementPanelRango;
 import calcoloMatriciale.GUI.Panels.Rango.MatrRango2x2;
 import calcoloMatriciale.GUI.Panels.Rango.MatrRango3x3;
@@ -29,7 +24,8 @@ public class MainFrame extends JFrame{
     public Matrice2x2 matrice2x2;
     public Matrice3x3 matrice3x3;
     public Matrice4x4 matrice4x4;
-    
+
+    public SumDiff2x2Panel sumDiff2x2Panel;
     public SumDiff3x3Panel sumDiff3x3Panel;
     public SumDiff4x4Panel sumDiff4x4Panel;
     
@@ -72,6 +68,10 @@ public class MainFrame extends JFrame{
         this.managementPanelOper = new ManagementPanelOper(this);
         this.getContentPane().add(managementPanelOper);
         this.managementPanelOper.setVisible(false);
+
+        this.sumDiff2x2Panel = new SumDiff2x2Panel(this);
+        this.getContentPane().add(sumDiff2x2Panel);
+        this.sumDiff2x2Panel.setVisible(false);
         
         this.sumDiff3x3Panel = new SumDiff3x3Panel(this);
         this.getContentPane().add(sumDiff3x3Panel);
