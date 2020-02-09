@@ -28,7 +28,8 @@ public class MainFrame extends JFrame{
     public SumDiff2x2Panel sumDiff2x2Panel;
     public SumDiff3x3Panel sumDiff3x3Panel;
     public SumDiff4x4Panel sumDiff4x4Panel;
-    
+
+    public Prodotto2x2 prodotto2x2;
     public Prodotto3x3Panel prodotto3x3;
     public Prodotto4x4Panel prodotto4x4Panel;
     
@@ -80,7 +81,11 @@ public class MainFrame extends JFrame{
         this.sumDiff4x4Panel = new SumDiff4x4Panel(this);
         this.getContentPane().add(sumDiff4x4Panel);
         this.sumDiff4x4Panel.setVisible(false);
-        
+
+        this.prodotto2x2 = new Prodotto2x2(this);
+        this.getContentPane().add(prodotto2x2);
+        this.prodotto2x2.setVisible(false);
+
         this.prodotto3x3 = new Prodotto3x3Panel(this);
         this.getContentPane().add(prodotto3x3);
         this.prodotto3x3.setVisible(false);

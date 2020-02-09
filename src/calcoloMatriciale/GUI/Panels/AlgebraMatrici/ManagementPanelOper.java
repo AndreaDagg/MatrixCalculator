@@ -17,6 +17,7 @@ public class ManagementPanelOper extends JPanel {
     private JButton sommaDiff2x2;
     private JButton sommaDiff3x3;
     private JButton sommaDiff4x4;
+    private JButton prodotto2x2;
     private JButton prodotto3x3;
     private JButton prodotto4x4;
     private JButton inversa2x2;
@@ -56,15 +57,23 @@ public class ManagementPanelOper extends JPanel {
         this.sommaDiff4x4.setBackground(Color.WHITE);
         this.add(this.sommaDiff4x4);
 
+        this.prodotto2x2 = new JButton("MATRICI 2x2");
+        this.prodotto2x2.setBounds(580, 220, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.prodotto2x2.addMouseListener(listner);
+        this.prodotto2x2.setForeground(Color.BLACK);
+        this.prodotto2x2.setBackground(Color.WHITE);
+        this.add(this.prodotto2x2);
+
+
         this.prodotto3x3 = new JButton("MATRICI 3x3");
-        this.prodotto3x3.setBounds(580, 220, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.prodotto3x3.setBounds(600 + WIDTH_PULSANTE, 220, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.prodotto3x3.addMouseListener(listner);
         this.prodotto3x3.setForeground(Color.BLACK);
         this.prodotto3x3.setBackground(Color.WHITE);
         this.add(this.prodotto3x3);
 
         this.prodotto4x4 = new JButton("MATRICI 4X4");
-        this.prodotto4x4.setBounds(600 + WIDTH_PULSANTE, 220, WIDTH_PULSANTE, HEIGHT_PULSANTE);
+        this.prodotto4x4.setBounds(620 + WIDTH_PULSANTE + WIDTH_PULSANTE, 220, WIDTH_PULSANTE, HEIGHT_PULSANTE);
         this.prodotto4x4.addMouseListener(listner);
         this.prodotto4x4.setForeground(Color.BLACK);
         this.prodotto4x4.setBackground(Color.WHITE);
@@ -118,7 +127,9 @@ public class ManagementPanelOper extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JButton btn = (JButton) e.getSource();
-            if(btn.equals(sommaDiff2x2))
+            if (btn.equals(prodotto2x2))
+                mainFrame.switchPanel(mainFrame.managementPanelOper, mainFrame.prodotto2x2);
+            if (btn.equals(sommaDiff2x2))
                 mainFrame.switchPanel(mainFrame.managementPanelOper, mainFrame.sumDiff2x2Panel);
             if (btn.equals(sommaDiff3x3))
                 mainFrame.switchPanel(mainFrame.managementPanelOper, mainFrame.sumDiff3x3Panel);
